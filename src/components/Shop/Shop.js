@@ -7,30 +7,23 @@ const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
     useEffect(()=>{
-      console.log('product load before fetch');
         fetch("products.json")
           .then((res) => res.json())
-          .then((data) => {
-            setProducts(data)
-            console.log('products loaded');
-          });
+          .then((data) => setProducts(data));
     },[]);
     useEffect(()=>{
-      console.log('local storage frist line', products);
-      const storedCart = getStoredCart();
-      const savedCart = [];
-      for(const id in storedCart){
-        const addedProduct = products.find(product => product.id === id);
-        if(addedProduct){
-          const quantity = storedCart[id];
-          addedProduct.quantity = quantity;
-          savedCart.push(addedProduct);
+        const storedCart = getStoredCart();
+        const savedCart = [];
+        for(const id in storedCart){
+          const addedProduct = products.find(product => product.id === id);
+          if(addedProduct){
+            const quantity = storedCart[id];
+            addedProduct.quantity = quantity;
+            savedCart.push(addedProduct);
+          }
         }
-      }
-      setCart(savedCart);
-      // console.log('local storae finished');
-    },[products]);
-
+        setCart(savedCart);
+    },[products])
     const handalAddToCart = (product) => {
       const newCart = [...cart, product];
       setCart(newCart);
