@@ -1,5 +1,17 @@
 .cart{
     position: sticky;
     top: 0;
-    padding: 30px 20px;
+    padding: 30px 50px;
+}
+.cart-info{
+    font-size: 18px;
+}
+.clear-btn{
+        padding: 10px 22px;
+            width: 100%;
+            color: #fff;
+            background-color: #FF3030;
+            border: 0;
+            border-radius: 4px;
+            font-size: 18px;
 }

@@ -5,7 +5,10 @@ import './Header.css';
 const Header = () => {
     return (
         <nav className='header-nav'>
+            <Link to="/">
+
             <img src={logo} alt="ema-john-logo" />
+            </Link>
             <div>
                 <Link to="/">Shop</Link>
                 <Link to="/orders">Orders</Link>
