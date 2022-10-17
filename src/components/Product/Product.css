@@ -35,6 +35,7 @@
     position: absolute;
     bottom: 0;
     font-weight: bold;
+    cursor: pointer;
 }
 .btn-cart:hover{
     background-color: orange;

@@ -27,12 +27,24 @@ const Orders = () => {
               handalReviewItem={handalReviewItem}
             ></ReviewItem>
           ))}
-          {
-            cart.length === 0 && <h2 style={{alignItem: 'center'}}>No Item added in Cart! Please <Link to="/">Shop More</Link></h2> 
-          }
+          {cart.length === 0 && (
+            <h2 style={{ alignItem: "center" }}>
+              No Item added in Cart! Please <Link to="/">Shop More</Link>
+            </h2>
+          )}
         </div>
         <div className="cart-container">
-          <Cart cart={cart} clearCart={clearCart}></Cart>
+          <Cart cart={cart} clearCart={clearCart}>
+            <Link to="/shipping">
+              <button className="review-btn">
+                Proceed to Shipping 
+                <i
+                  style={{ marginLeft: "10px" }}
+                  class="fa-solid fa-arrow-right-long"
+                ></i>
+              </button>
+            </Link>
+          </Cart>
         </div>
       </div>
     );
