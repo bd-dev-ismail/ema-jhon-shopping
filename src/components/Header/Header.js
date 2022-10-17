@@ -1,8 +1,11 @@
 
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
 import logo from '../../images/Logo.svg';
 import './Header.css';
 const Header = () => {
+    const {user} = useContext(AuthContext)
     return (
         <nav className='header-nav'>
             <Link to="/">

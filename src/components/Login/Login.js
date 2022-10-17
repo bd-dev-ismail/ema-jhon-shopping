@@ -34,6 +34,14 @@ const Login = () => {
             Create new Account
           </Link>
         </p>
+        <div style={{textAlign: 'center'}}>Or</div>
+        <button className="btn-google">
+          <i
+            className="fa-brands fa-google"
+            style={{ color: "rgba(235, 67, 53, 1)", marginRight: '20px', fontSize: '21px'}}
+          ></i>
+          Sign In With Google
+        </button>
       </div>
     );
 };
