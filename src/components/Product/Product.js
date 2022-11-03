@@ -13,7 +13,7 @@ const Product = ({ product, handalAddToCart }) => {
       </div>
       <button onClick={() => handalAddToCart(product)} className="btn-cart">
         Add To Cart
-      <i style={{margin: '0 10px'}} class="fa-solid fa-cart-plus"></i>
+      <i style={{margin: '0 10px'}} className="fa-solid fa-cart-plus"></i>
       </button>
     </div>
   );

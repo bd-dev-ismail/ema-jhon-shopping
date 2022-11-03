@@ -8,7 +8,7 @@ const Orders = () => {
     const { initialCart } = useLoaderData();  //{products, initialCart};
     const [cart, setCart] = useState(initialCart);
     const handalReviewItem = (id)=>{
-        const remaning = cart.filter(product => product.id !== id);
+        const remaning = cart.filter(product => product._id !== id);
         setCart(remaning);
         removeFromDb(id);
     }
@@ -22,7 +22,7 @@ const Orders = () => {
         <div className="orders-cotnainer">
           {cart.map((product) => (
             <ReviewItem
-              key={product.id}
+              key={product._id}
               product={product}
               handalReviewItem={handalReviewItem}
             ></ReviewItem>
@@ -40,7 +40,7 @@ const Orders = () => {
                 Proceed to Shipping 
                 <i
                   style={{ marginLeft: "10px" }}
-                  class="fa-solid fa-arrow-right-long"
+                  className="fa-solid fa-arrow-right-long"
                 ></i>
               </button>
             </Link>
